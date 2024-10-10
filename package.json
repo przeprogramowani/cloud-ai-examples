@@ -1,0 +1,19 @@
+{
+  "name": "cloud-ai-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:aws": "node aws/index.js",
+    "start:gcp": "node gcp/index.js",
+    "start:or": "node or/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agent-runtime": "^3.667.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.667.0",
+    "@google-cloud/vertexai": "^1.8.1"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "citations": [
+    {
+      "generatedResponsePart": {
+        "textResponsePart": {
+          "span": {
+            "end": 635,
+            "start": 0
+          },
+          "text": "Tak, Przeprogramowani korzystają z narzędzia Make. Używają go w dwóch głównych celach:\n\n1. Do automatyzacji procesu wysyłania certyfikatów uczestnikom szkoleń. Make pozwala im na tworzenie scenariuszy, które obejmują pobieranie certyfikatów z Amazon S3, definiowanie treści wiadomości e-mail oraz wysyłanie certyfikatów jako załączników do uczestników.\n\n2. Do automatyzacji procesu tworzenia transkrypcji podcastów. Make jest wykorzystywane do wykonywania serii zapytań HTTP, które umożliwiają interakcję z GitHubem w celu tworzenia nowych gałęzi, pull requestów i wprowadzania zmian w repozytorium, gdzie przechowywane są transkrypcje."
+        }
+      },
+      "retrievedReferences": [
+        {
+          "content": {
+            "text": "[S3 w Make.com](/assets/blog/pdf-cert-builder/make-s3.png) W przypadku wysyłki maili, mogę zdefiniować treść wiadomości, temat, a także załącznik (certyfikat w formacie PDF). Same maile wysyłam poprzez istniejącą skrzynkę pocztową i autentykację SMTP, co pozwala na zachowanie spójności w komunikacji z uczestnikami: ![Email w Make.com](/assets/blog/pdf-cert-builder/smtp.png) Po zapisaniu scenariusza mogę go testować na kilka sposobów - od ręcznego wywołania webhooka, aż po uruchomienie go w odpowiedzi na zdarzenie (np. nowa odpowiedź w zgłoszeniu ukończenia szkolenia). W ten sposób zrealizowałem cały proces generowania i wysyłania certyfikatów dla uczestników naszego szkolenia - na teraz mówimy o ponad dwustu pasjonatach frontendu!"
+          },
+          "location": {
+            "s3Location": {
+              "uri": "s3://opanuj-ai-blog/automatyzacja-github-actions-chat-gpt.md"
+            },
+            "type": "S3"
+          },
+          "metadata": {
+            "x-amz-bedrock-kb-source-uri": "s3://opanuj-ai-blog/automatyzacja-github-actions-chat-gpt.md",
+            "x-amz-bedrock-kb-chunk-id": "1%3A0%3A_AnlcJIBqY_jP74K5U27",
+            "x-amz-bedrock-kb-data-source-id": "RKRONDNUYZ"
+          }
+        },
+        {
+          "content": {
+            "text": "Na samym Make realizujemy to poprzez serię zapytań HTTP - nie wygląda to zbyt estetycznie, ale robi to, co powinno: ![Github w Make](/assets/blog/transkrypcje-podcast/github.png) Największą zaletą takiego rozwiązania jest fakt, że wszelkie korekty możemy teraz wprowadzać tak jakbyśmy realizowali Code Review dla wirtualnego asystenta. Mamy dedykowany branch, pull request, a ostatnie zdanie w kwestii jakości należy do nas: ![Github - Code Review](/assets/blog/transkrypcje-podcast/code-review.png) ## Dalsze kroki Pierwsze podejście do automatycznego tworzenia transkrypcji przyniosło nam mnóstwo nowej wiedzy i wniosków, które wykorzystamy w kolejnych projektach."
+          },
+          "location": {
+            "s3Location": {
+              "uri": "s3://opanuj-ai-blog/jak-tworzyc-transkrypcje-podcastow-ai.md"
+            },
+            "type": "S3"
+          },
+          "metadata": {
+            "x-amz-bedrock-kb-source-uri": "s3://opanuj-ai-blog/jak-tworzyc-transkrypcje-podcastow-ai.md",
+            "x-amz-bedrock-kb-chunk-id": "1%3A0%3AHQnlcJIBqY_jP74K7k5o",
+            "x-amz-bedrock-kb-data-source-id": "RKRONDNUYZ"
+          }
+        }
+      ]
+    },
+    {
+      "generatedResponsePart": {
+        "textResponsePart": {
+          "span": {
+            "end": 918,
+            "start": 637
+          },
+          "text": "Wykorzystanie Make pozwala Przeprogramowanym na znaczne zautomatyzowanie procesów, które wcześniej wymagały ręcznej pracy. Dzięki temu mogą efektywniej zarządzać dystrybucją certyfikatów dla uczestników szkoleń oraz usprawniać proces tworzenia i publikowania transkrypcji podcastów."
+        }
+      },
+      "retrievedReferences": [
+        {
+          "content": {
+            "text": "[S3 w Make.com](/assets/blog/pdf-cert-builder/make-s3.png) W przypadku wysyłki maili, mogę zdefiniować treść wiadomości, temat, a także załącznik (certyfikat w formacie PDF). Same maile wysyłam poprzez istniejącą skrzynkę pocztową i autentykację SMTP, co pozwala na zachowanie spójności w komunikacji z uczestnikami: ![Email w Make.com](/assets/blog/pdf-cert-builder/smtp.png) Po zapisaniu scenariusza mogę go testować na kilka sposobów - od ręcznego wywołania webhooka, aż po uruchomienie go w odpowiedzi na zdarzenie (np. nowa odpowiedź w zgłoszeniu ukończenia szkolenia). W ten sposób zrealizowałem cały proces generowania i wysyłania certyfikatów dla uczestników naszego szkolenia - na teraz mówimy o ponad dwustu pasjonatach frontendu!"
+          },
+          "location": {
+            "s3Location": {
+              "uri": "s3://opanuj-ai-blog/automatyzacja-github-actions-chat-gpt.md"
+            },
+            "type": "S3"
+          },
+          "metadata": {
+            "x-amz-bedrock-kb-source-uri": "s3://opanuj-ai-blog/automatyzacja-github-actions-chat-gpt.md",
+            "x-amz-bedrock-kb-chunk-id": "1%3A0%3A_AnlcJIBqY_jP74K5U27",
+            "x-amz-bedrock-kb-data-source-id": "RKRONDNUYZ"
+          }
+        },
+        {
+          "content": {
+            "text": "W przypadku większych projektów warto byłoby zaimplementować obsługę pewnego rodzaju transakcyjności (np. żeby uniknąć aktualizacji stanu przy niepoprawnej kreacji nowego certyfikatu), a także zabezpieczyć dostęp do plików za pomocą odpowiednich uprawnień. Na to przyjdzie jednak pora w momencie, kiedy skala projektu będzie tego wymagała. ## Wysyłanie certyfikatów Na tym etapie certyfikaty uczestników były już możliwe do zapisania na S3, w dedykowanym folderze poświęconym konkretnemu szkoleniu. Ostatnim krokiem było udostępnienie właściwego dokumentu uczestnikowi naszego szkolenia. Aby oszczędzić sobie zbędnej konfiguracji, postawiłem na popularne rozwiązanie no-code, czyli Make. Make pozwala na tworzenie prostych aplikacji, które mogą być wykorzystane do wysyłania maili, generowania dokumentów, a także integracji z innymi narzędziami. Cały scenariusz sprowadza się do trzech kroków: 1."
+          },
+          "location": {
+            "s3Location": {
+              "uri": "s3://opanuj-ai-blog/automatyzacja-github-actions-chat-gpt.md"
+            },
+            "type": "S3"
+          },
+          "metadata": {
+            "x-amz-bedrock-kb-source-uri": "s3://opanuj-ai-blog/automatyzacja-github-actions-chat-gpt.md",
+            "x-amz-bedrock-kb-chunk-id": "1%3A0%3A-gnlcJIBqY_jP74K5U27",
+            "x-amz-bedrock-kb-data-source-id": "RKRONDNUYZ"
+          }
+        },
+        {
+          "content": {
+            "text": "Na samym Make realizujemy to poprzez serię zapytań HTTP - nie wygląda to zbyt estetycznie, ale robi to, co powinno: ![Github w Make](/assets/blog/transkrypcje-podcast/github.png) Największą zaletą takiego rozwiązania jest fakt, że wszelkie korekty możemy teraz wprowadzać tak jakbyśmy realizowali Code Review dla wirtualnego asystenta. Mamy dedykowany branch, pull request, a ostatnie zdanie w kwestii jakości należy do nas: ![Github - Code Review](/assets/blog/transkrypcje-podcast/code-review.png) ## Dalsze kroki Pierwsze podejście do automatycznego tworzenia transkrypcji przyniosło nam mnóstwo nowej wiedzy i wniosków, które wykorzystamy w kolejnych projektach."
+          },
+          "location": {
+            "s3Location": {
+              "uri": "s3://opanuj-ai-blog/jak-tworzyc-transkrypcje-podcastow-ai.md"
+            },
+            "type": "S3"
+          },
+          "metadata": {
+            "x-amz-bedrock-kb-source-uri": "s3://opanuj-ai-blog/jak-tworzyc-transkrypcje-podcastow-ai.md",
+            "x-amz-bedrock-kb-chunk-id": "1%3A0%3AHQnlcJIBqY_jP74K7k5o",
+            "x-amz-bedrock-kb-data-source-id": "RKRONDNUYZ"
+          }
+        }
+      ]
+    }
+  ],
+  "output": {
+    "text": "Tak, Przeprogramowani korzystają z narzędzia Make. Używają go w dwóch głównych celach:\n\n1. Do automatyzacji procesu wysyłania certyfikatów uczestnikom szkoleń. Make pozwala im na tworzenie scenariuszy, które obejmują pobieranie certyfikatów z Amazon S3, definiowanie treści wiadomości e-mail oraz wysyłanie certyfikatów jako załączników do uczestników.\n\n2. Do automatyzacji procesu tworzenia transkrypcji podcastów. Make jest wykorzystywane do wykonywania serii zapytań HTTP, które umożliwiają interakcję z GitHubem w celu tworzenia nowych gałęzi, pull requestów i wprowadzania zmian w repozytorium, gdzie przechowywane są transkrypcje. Wykorzystanie Make pozwala Przeprogramowanym na znaczne zautomatyzowanie procesów, które wcześniej wymagały ręcznej pracy. Dzięki temu mogą efektywniej zarządzać dystrybucją certyfikatów dla uczestników szkoleń oraz usprawniać proces tworzenia i publikowania transkrypcji podcastów."
+  }
+}
