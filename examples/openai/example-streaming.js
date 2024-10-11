@@ -25,7 +25,7 @@ const messages = [
   // },
 ];
 
-async function requestAnswer(isStreamingEnabled) {
+async function requestAnswer(isStreamingEnabled = false) {
   return await client.chat.completions.create({
     model: "gpt-4o-mini",
     stream: isStreamingEnabled,
@@ -34,17 +34,19 @@ async function requestAnswer(isStreamingEnabled) {
 }
 
 async function nonStreamingAnswer() {
-  const response = await requestAnswer(false);
+  const response = await requestAnswer();
   const message = response.choices[0].message.content;
   console.log(message);
 }
 
-async function streamAnswer() {
-  const stream = await requestAnswer(true);
-  console.clear();
-  for await (const chunk of stream) {
-    process.stdout.write(chunk.choices[0]?.delta?.content || "");
-  }
-}
-// nonStreamingAnswer();
-streamAnswer();
+nonStreamingAnswer();
+
+// async function streamAnswer() {
+//   const stream = await requestAnswer(true);
+//   console.clear();
+//   for await (const chunk of stream) {
+//     process.stdout.write(chunk.choices[0]?.delta?.content || "");
+//   }
+// }
+
+// streamAnswer();
