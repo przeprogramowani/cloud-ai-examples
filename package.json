@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:aws": "node aws/index.js",
-    "start:gcp": "node gcp/index.js",
-    "start:or": "node or/index.js"
+    "start:aws": "node examples/aws/index.js",
+    "start:gcp": "node examples/gcp/index.js",
+    "start:or": "node examples/or/index.js",
+    "start:oai:streaming": "node --no-warnings examples/openai/example-streaming.js",
+    "start:oai:temperature": "node --no-warnings examples/openai/example-temp.js",
+    "start:oai:images": "node --no-warnings examples/openai/example-images.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +17,7 @@
   "dependencies": {
     "@aws-sdk/client-bedrock-agent-runtime": "^3.667.0",
     "@aws-sdk/client-bedrock-runtime": "^3.667.0",
-    "@google-cloud/vertexai": "^1.8.1"
+    "@google-cloud/vertexai": "^1.8.1",
+    "openai": "4.67.3"
   }
 }
