@@ -8,7 +8,8 @@
     "start:or": "node examples/or/index.js",
     "start:oai:streaming": "node --no-warnings examples/openai/example-streaming.js",
     "start:oai:temperature": "node --no-warnings examples/openai/example-temp.js",
-    "start:oai:images": "node --no-warnings examples/openai/example-images.js"
+    "start:oai:images": "node --no-warnings examples/openai/example-images.js",
+    "start:oai:assistant": "node --no-warnings examples/openai/example-assistant.js"
   },
   "author": "",
   "license": "ISC",
