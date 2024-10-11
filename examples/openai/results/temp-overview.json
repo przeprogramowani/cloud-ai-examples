@@ -1,0 +1,42 @@
+[
+  {
+    "temp": 0,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję oraz udostępnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 0,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję oraz udostępnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 0,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję, a także udostępnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 0,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję oraz udostępnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 0,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję oraz udostępnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 1,
+    "message": "Wzorzec projektowy Singleton to pattern, który zapewnia, że dana klasa ma tylko jedną instancję i udostępnia do niej globalny dostęp w aplikacji."
+  },
+  {
+    "temp": 1,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję oraz udostępnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 1,
+    "message": "Wzorzec projektowy Singleton zapewnia, że dana klasa ma tylko jedną instancję, a także zapewnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 1,
+    "message": "Wzorzec projektowy Singleton zapewnia, że klasa ma tylko jedną instancję, a także zapewnia globalny punkt dostępu do tej instancji."
+  },
+  {
+    "temp": 1,
+    "message": "Wzorzec projektowy Singleton to technika zapewniająca, że dany klasy instancjonuje się tylko raz i udostępnia globalny punkt dostępu do tej instancji."
+  }
+]

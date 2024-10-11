@@ -9,20 +9,20 @@ const client = new OpenAI({
 const messages = [
   {
     role: "system",
-    content: SYSTEM_MESSAGES.EXPERT,
+    content: SYSTEM_MESSAGES.NOVICE,
   },
   {
     role: "user",
     content: "Wytłumacz mi, jak działa rekurencja w programowaniu",
   },
-  // {
-  //   role: "assistant",
-  //   content: "Czy chcesz poznać teorię czy uczyć się na przykładzie?",
-  // },
-  // {
-  //   role: "user",
-  //   content: "Uczę się na przykładach",
-  // },
+  {
+    role: "assistant",
+    content: "Czy chcesz poznać teorię czy uczyć się na przykładzie?",
+  },
+  {
+    role: "user",
+    content: "Uczę się na przykładach",
+  },
 ];
 
 async function requestAnswer(isStreamingEnabled = false) {
@@ -33,20 +33,20 @@ async function requestAnswer(isStreamingEnabled = false) {
   });
 }
 
-async function nonStreamingAnswer() {
-  const response = await requestAnswer();
-  const message = response.choices[0].message.content;
-  console.log(message);
-}
-
-nonStreamingAnswer();
-
-// async function streamAnswer() {
-//   const stream = await requestAnswer(true);
-//   console.clear();
-//   for await (const chunk of stream) {
-//     process.stdout.write(chunk.choices[0]?.delta?.content || "");
-//   }
+// async function nonStreamingAnswer() {
+//   const response = await requestAnswer();
+//   const message = response.choices[0].message.content;
+//   console.log(message);
 // }
 
-// streamAnswer();
+// nonStreamingAnswer();
+
+async function streamAnswer() {
+  const stream = await requestAnswer(true);
+  console.clear();
+  for await (const chunk of stream) {
+    process.stdout.write(chunk.choices[0]?.delta?.content || "");
+  }
+}
+
+streamAnswer();
