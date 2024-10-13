@@ -11,7 +11,7 @@ const rl = readlinePromises.createInterface({
   output: process.stdout,
 });
 
-const assistantId = "asst_QL57AhNDg8jsxrFlqt8tbCnQ";
+const assistantId = "asst_17BF4HsVJ0dFYj6eJxFix5HO";
 
 async function main() {
   const thread = await openai.beta.threads.create();
