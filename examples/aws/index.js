@@ -3,6 +3,12 @@ import {
   RetrieveAndGenerateCommand,
 } from "@aws-sdk/client-bedrock-agent-runtime";
 
+import {fileURLToPath} from "url";
+import {dirname, join} from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 import {writeFile} from "fs/promises";
 
 import {KNOWLEDGE_BASE_ID, MODEL_ARN} from "./config.js";
@@ -23,4 +29,7 @@ const retrieveAndGen = await new RetrieveAndGenerateCommand({
 });
 
 const {citations, output} = await client.send(retrieveAndGen);
-await writeFile("output.json", JSON.stringify({citations, output}, null, 2));
+await writeFile(
+  join(__dirname, "output.json"),
+  JSON.stringify({citations, output}, null, 2)
+);
